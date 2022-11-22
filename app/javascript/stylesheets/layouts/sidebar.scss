@@ -20,3 +20,41 @@ $sidebar-width: 72px;
   border-bottom: thin solid theme("colors.gray.300");
   padding: 8px 12px;
 }
+
+
+
+.sidebar{
+  background-color: #E9EBED;
+  width: 80px;
+  height:100vh;
+  transition: all 0.25s
+}
+.sidebar-expanded{
+  background-color: #E9EBED;
+  width: 312px;
+  height:100vh;
+  transition: all 0.5s
+}
+.logo{
+  width: 25.1px;
+  height: 35.11px;
+  left: 36.68px;
+  top: 35.41px;
+}
+.selected{
+  background-color: white;
+  color: #2F3941;
+  border-radius: 5px;
+}
+.profile-expanded{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px 8px 8px;
+  gap: 8px;
+  background-color: white;
+  transition: all 0.25s;
+  width: 288px;
+  height: 56px;
+
+}
