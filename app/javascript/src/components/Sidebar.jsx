@@ -16,7 +16,7 @@ const Sidebar = () => {
     >
       <div
         className={`mt-2 flex flex-col ${
-          expanded ? "mx-2" : "mx-2 items-center"
+          expanded ? "mx-3" : "mx-2 items-center"
         }`}
       >
         <img className="logo" src={Logo} />

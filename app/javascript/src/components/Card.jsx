@@ -1,0 +1,27 @@
+import React from "react";
+
+import { MenuVertical, Clock } from "neetoicons";
+import { Label, Typography, Tag, Avatar } from "neetoui";
+
+const Card = ({ title, description }) => (
+  <div className="flex flex-col border-2 p-3">
+    <div className="flex flex-row">
+      <Label>{title}</Label>
+      <MenuVertical className="ml-auto p-1" />
+    </div>
+    <Typography style="body3">{description}</Typography>
+    <hr className="my-2" />
+    <div className="flex flex-row">
+      <Tag label="Getting started" style="secondary" type="solid" />
+      <Clock className="ml-auto mt-1 p-1" />
+      <Label className="p-1">Created 2 hours ago</Label>
+      <Avatar
+        user={{
+          imageUrl: "https://randomuser.me/api/portraits/women/43.jpg",
+        }}
+      />
+    </div>
+  </div>
+);
+
+export default Card;

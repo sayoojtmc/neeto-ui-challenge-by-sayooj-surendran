@@ -5,8 +5,8 @@ import { Typography } from "neetoui";
 import SidePanelRow from "./SidePanelRow";
 
 const SidePanel = ({ title }) => (
-  <div className="flex-5 flex flex-row">
-    <div className="h-100 flex w-auto flex-grow flex-col py-5">
+  <div className="flex-5 sidepanel flex flex-row">
+    <div className="h-100 flex w-auto flex-grow flex-col ">
       <Typography className="px-5 py-5" style="h2">
         {title}
       </Typography>
