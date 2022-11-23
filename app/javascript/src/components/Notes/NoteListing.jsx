@@ -3,17 +3,16 @@ import React from "react";
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import Card from "components/Card";
-
-import { NOTES_LIST } from "./constants";
-import SidePanel from "./SidePanel";
+import Card from "components/Notes/Card";
+import { NOTES_LIST } from "components/Notes/constants";
+import SidePanel from "components/Notes/SidePanel";
 
 const NoteListing = () => (
   <div className="flex flex-row">
     <SidePanel title="Notes" />
     <div className="flex flex-col">
       <Header
-        actionBlock={<Button label="Add Note" />}
+        actionBlock={<Button className="mx-2" label="Add Note +" />}
         menuBarToggle={function noRefCheck() {}}
         title="All Notes"
         searchProps={{

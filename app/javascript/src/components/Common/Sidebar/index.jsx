@@ -1,65 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
-import { useHistory } from "react-router-dom";
-
-import authenticationApi from "apis/authentication";
-import {
-  PROFILE_PATH,
-  CHANGE_PASSWORD_PATH,
-  LOGIN_PATH,
-} from "components/routeConstants";
-import { useAuthDispatch } from "contexts/auth";
-import { useUserState } from "contexts/user";
-
-import { APP_NAME, SIDENAV_LINKS } from "./constants";
+import Logo from "images/Subtract";
+import { Text, Group, LeftArrow, RightArrow, Down } from "neetoicons";
+import { Avatar, Label, Typography } from "neetoui";
 
 const Sidebar = () => {
-  const history = useHistory();
-  const authDispatch = useAuthDispatch();
-  const { user } = useUserState();
-
-  const handleLogout = async () => {
-    try {
-      await authenticationApi.logout();
-      authDispatch({ type: "LOGOUT" });
-      window.location.href = LOGIN_PATH;
-    } catch (error) {
-      logger.error(error);
-    }
-  };
-
-  const bottomLinks = [
-    {
-      label: "My profile",
-      onClick: () => history.push(PROFILE_PATH, { resetTab: true }),
-    },
-    {
-      label: "Change password",
-      onClick: () => history.push(CHANGE_PASSWORD_PATH, { resetTab: true }),
-    },
-    {
-      label: "Logout",
-      onClick: handleLogout,
-    },
-  ];
+  const [expanded, setExpanded] = useState(false);
+  const toggleExpanded = () => setExpanded(!expanded);
 
   return (
-    <NeetoUISidebar
-      appName={APP_NAME}
-      changelogProps={{ id: "neetochangelog-trigger" }}
-      navLinks={SIDENAV_LINKS}
-      organizationInfo={{
-        name: "Wheel",
-        subdomain: "bigbinary.com",
-      }}
-      profileInfo={{
-        name: `${user.first_name} ${user.last_name}`,
-        imageUrl: user.profile_image_path,
-        email: user.email,
-        bottomLinks,
-      }}
-    />
+    <div
+      className={`flex flex-col ${
+        expanded ? "sidebar-expanded" : "sidebar"
+      } ease-in`}
+    >
+      <div
+        className={`mt-2 flex flex-col ${
+          expanded ? "mx-3" : "mx-2 items-center"
+        }`}
+      >
+        <img className="logo" src={Logo} />
+      </div>
+      <div className="mt-5 ">
+        <div
+          className={
+            expanded
+              ? "mx-2 flex flex-col justify-evenly"
+              : "mx-2 flex flex-col items-center justify-evenly"
+          }
+        >
+          <div className="selected flex flex-row">
+            <Text className="m-2" />
+            {expanded && <Label className="mx-2">Notes</Label>}
+          </div>
+          <div className="flex flex-row">
+            <Group className="m-2" />
+            {expanded && <Label className="mx-2">Contacts</Label>}
+          </div>
+        </div>
+      </div>
+      <div className={`mt-auto mb-5 flex flex-col items-center `}>
+        <div
+          className={`my-3 flex flex-row ${expanded ? "profile-expanded" : ""}`}
+        >
+          <Avatar
+            user={{
+              imageUrl: "https://randomuser.me/api/portraits/women/43.jpg",
+            }}
+          />
+          {expanded && (
+            <>
+              <div className="flex flex-col">
+                <Label>Oliver Smith</Label>
+                <Typography style="body2">oliver.smith@gmail.com</Typography>
+              </div>
+              <Down className="ml-auto" />
+            </>
+          )}
+        </div>
+        {expanded ? (
+          <LeftArrow onClick={toggleExpanded} />
+        ) : (
+          <RightArrow onClick={toggleExpanded} />
+        )}
+      </div>
+    </div>
   );
 };
 

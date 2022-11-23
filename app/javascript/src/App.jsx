@@ -2,8 +2,8 @@ import React from "react";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import NoteListing from "components/NoteListing";
-import Sidebar from "components/Sidebar";
+import Sidebar from "components/Common/Sidebar";
+import NoteListing from "components/Notes/NoteListing";
 
 const App = () => (
   <Router>
