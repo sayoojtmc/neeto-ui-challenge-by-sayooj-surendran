@@ -9,7 +9,6 @@ $sidebar-width: 72px;
   height: 100vh;
   transition: width 0.3s;
 }
-
 .nh-logo {
   width: 100%;
   min-height: 72px;
@@ -20,9 +19,6 @@ $sidebar-width: 72px;
   border-bottom: thin solid theme("colors.gray.300");
   padding: 8px 12px;
 }
-
-
-
 .sidebar{
   background-color: #E9EBED;
   width: 80px;
@@ -56,5 +52,4 @@ $sidebar-width: 72px;
   transition: all 0.25s;
   width: 288px;
   height: 56px;
-
 }
