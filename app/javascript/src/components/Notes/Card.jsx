@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
+import dayjs from "dayjs";
 import { Clock } from "neetoicons";
-import { Label, Typography, Tag, Avatar, Tooltip } from "neetoui";
+
+
+import {
+  Label,
+  Typography,
+  Tag,
+  Avatar,
+  Tooltip,
+  Alert,
+  Toastr,
+} from "neetoui";
 import { getRelativeTimeFromNow, getDayAndTimeFromDate } from "utils";
 
 import NoteDropDown from "components/Notes/NoteDropDown";
 
-const Card = ({ title, description, type, createdAt }) => (
-  <div className="my-2 flex flex-col border-2 p-3 shadow-md">
-    <div className="flex flex-row">
-      <Label>{title}</Label>
-      <NoteDropDown />
-    </div>
-    <Typography style="body3">{description}</Typography>
+
+
+const Card = ({ title, description, type, createdAt }) => {
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  return (
+    <div className="my-2 flex flex-col border-2 p-3 shadow-md">
+      <div className="flex flex-row">
+        <Label>{title}</Label>
+        <NoteDropDown setShowDeleteAlert={setShowDeleteAlert} />
+      </div>
+      <Typography style="body3">{description}</Typography>
     <hr className="my-2" />
     <div className="flex flex-row">
       <Tag label="Getting started" style="secondary" type="solid" />
@@ -23,14 +38,25 @@ const Card = ({ title, description, type, createdAt }) => (
             {`${type} ${getRelativeTimeFromNow(createdAt)} `}
           </Typography>
         </Tooltip>
+        </div>
+        <Avatar
+          user={{
+            imageUrl: "https://randomuser.me/api/portraits/women/43.jpg",
+          }}
+        />
       </div>
-      <Avatar
-        user={{
-          imageUrl: "https://randomuser.me/api/portraits/women/43.jpg",
+      <Alert
+        isOpen={showDeleteAlert}
+        message="Are you sure you want to delete the note? This action cannot be undone."
+        title="Delete Note"
+        onClose={() => setShowDeleteAlert(false)}
+        onSubmit={() => {
+          Toastr.success("Note was deleted successfully");
+          setShowDeleteAlert(false);
         }}
       />
-    </div>
+
   </div>
-);
+)};
 
 export default Card;
