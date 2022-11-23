@@ -1,12 +1,17 @@
 import React from "react";
 
-import { MenuVertical, Clock } from "neetoicons";
-import { Label, Typography, Tag, Avatar, Tooltip, Dropdown } from "neetoui";
+import { Clock } from "neetoicons";
+import { Label, Typography, Tag, Avatar, Tooltip } from "neetoui";
 
-import { calculateCreatedAgo, getDayFromDate } from "utils/index";
+import NoteDropDown from "components/Notes/NoteDropDown";
+import {
+  calculateCreatedAgo,
+  getDateObject,
+  getDayFromDate,
+} from "utils/index";
 
 const Card = ({ title, description, type }) => {
-  const date = Date.parse("2022-11-22");
+  const date = getDateObject("2022-11-22");
   const createdAgo = calculateCreatedAgo(date);
   const day = getDayFromDate(date);
 
@@ -34,26 +39,6 @@ const Card = ({ title, description, type }) => {
           }}
         />
       </div>
-    </div>
-  );
-};
-
-const NoteDropDown = () => {
-  const { Menu, MenuItem } = Dropdown;
-
-  return (
-    <div className="ml-auto flex">
-      <Dropdown
-        customTarget={<MenuVertical className="p-1" />}
-        label="Dropdown"
-      >
-        <Menu>
-          <MenuItem.Button key={0}>Edit</MenuItem.Button>
-          <MenuItem.Button key={1} style="danger">
-            Delete
-          </MenuItem.Button>
-        </Menu>
-      </Dropdown>
     </div>
   );
 };
