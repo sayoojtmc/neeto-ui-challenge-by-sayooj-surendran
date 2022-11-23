@@ -39,7 +39,6 @@ const SidePanel = ({ title }) => {
         <MenuBar.Block count={80} label="Europe" />
         <MenuBar.Block count={60} label="Middle-East" />
         <MenuBar.Block count={60} label="Asia" />
-        <MenuBar.AddNew label="Add new segments" />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -65,7 +64,6 @@ const SidePanel = ({ title }) => {
         <MenuBar.Block count={80} label="Europe" />
         <MenuBar.Block count={60} label="Middle-East" />
         <MenuBar.Block count={60} label="Asia" />
-        <MenuBar.AddNew label="Add new tag" />
       </MenuBar>
     </div>
   );
