@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Sidebar from "components/Common/Sidebar";
 import NoteListing from "components/Notes";
-import "lib/day";
+import "lib/dayjs";
 
 const App = () => (
   <Router>

@@ -12,7 +12,7 @@ export const FEATURE_LIST = [
   "Letter opener gem for development.",
 ];
 
-export const NOTES_LIST = [
+export const NOTES = [
   {
     id: 1,
     title: "Note 1",

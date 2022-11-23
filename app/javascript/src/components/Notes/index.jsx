@@ -4,7 +4,7 @@ import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import Card from "components/Notes/Card";
-import { NOTES_LIST } from "components/Notes/constants";
+import { NOTES } from "components/Notes/constants";
 import SidePanel from "components/Notes/SidePanel";
 
 const NoteListing = () => (
@@ -21,12 +21,12 @@ const NoteListing = () => (
         }}
       />
       <Container>
-        {NOTES_LIST.map(card => (
+        {NOTES.map(note => (
           <Card
-            description={card.description}
-            key={card.id}
-            title={card.title}
-            type={card.type}
+            description={note.description}
+            key={note.id}
+            title={note.title}
+            type={note.type}
           />
         ))}
       </Container>
