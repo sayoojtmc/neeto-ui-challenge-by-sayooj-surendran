@@ -11,7 +11,7 @@ const Card = ({ title, description, type }) => {
   const day = getDayFromDate(date);
 
   return (
-    <div className="my-2 flex flex-col border-2 p-3">
+    <div className="my-2 flex flex-col border-2 p-3 shadow-md">
       <div className="flex flex-row">
         <Label>{title}</Label>
         <NoteDropDown />
