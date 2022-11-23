@@ -26,6 +26,7 @@ const NoteListing = () => (
             description={card.description}
             key={card.id}
             title={card.title}
+            type={card.type}
           />
         ))}
       </Container>
