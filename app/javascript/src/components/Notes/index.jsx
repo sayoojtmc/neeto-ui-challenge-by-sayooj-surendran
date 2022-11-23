@@ -26,6 +26,7 @@ const NoteListing = () => {
         <Container>
           {NOTES.map(note => (
             <Card
+              createdAt={note.createdAt}
               description={note.description}
               key={note.id}
               title={note.title}
