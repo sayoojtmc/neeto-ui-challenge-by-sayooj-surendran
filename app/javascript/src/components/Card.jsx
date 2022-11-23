@@ -4,7 +4,7 @@ import { MenuVertical, Clock } from "neetoicons";
 import { Label, Typography, Tag, Avatar, Tooltip } from "neetoui";
 
 const Card = ({ title, description }) => (
-  <div className="card flex flex-col border-2 p-3">
+  <div className="my-2 flex flex-col border-2 p-3">
     <div className="flex flex-row">
       <Label>{title}</Label>
       <MenuVertical className="ml-auto p-1" />

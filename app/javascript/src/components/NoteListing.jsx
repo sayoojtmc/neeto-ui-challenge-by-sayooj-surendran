@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button } from "neetoui";
-import { Header } from "neetoui/layouts";
+import { Container, Header } from "neetoui/layouts";
 
 import Card from "components/Card";
 
@@ -15,13 +15,13 @@ const NoteListing = () => (
       <Header
         actionBlock={<Button label="Add Note" />}
         menuBarToggle={function noRefCheck() {}}
-        title="Layouts"
+        title="All Notes"
         searchProps={{
           onChange: function noRefCheck() {},
           value: "",
         }}
       />
-      <div className="mx-2 mt-5 flex flex-col">
+      <Container>
         {NOTES_LIST.map(card => (
           <Card
             description={card.description}
@@ -29,7 +29,7 @@ const NoteListing = () => (
             title={card.title}
           />
         ))}
-      </div>
+      </Container>
     </div>
   </div>
 );
