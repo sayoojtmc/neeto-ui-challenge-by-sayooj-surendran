@@ -13,9 +13,8 @@ const NoteDropDown = ({ setShowDeleteAlert }) => {
         label="Dropdown"
       >
         <Menu>
-          <MenuItem.Button key={0}>Edit</MenuItem.Button>
+          <MenuItem.Button>Edit</MenuItem.Button>
           <MenuItem.Button
-            key={1}
             style="danger"
             onClick={() => setShowDeleteAlert(true)}
           >
