@@ -1,36 +1,21 @@
 import React, { useState } from "react";
 
-import { Button } from "neetoui";
-import { Container, Header } from "neetoui/layouts";
+import { Container } from "neetoui/layouts";
 
+import Header from "components/Common/Header";
 import Card from "components/Notes/Card";
 import { NOTES } from "components/Notes/constants";
 import CreateNotePane from "components/Notes/Pane/Create";
 import SidePanel from "components/Notes/SidePanel";
 
 const NoteListing = () => {
-  const [searchValue, setSearchValue] = useState("");
   const [showPane, setShowPane] = useState(false);
 
   return (
     <div className="flex flex-row">
       <SidePanel title="Notes" />
       <div className="flex flex-col">
-        <Header
-          menuBarToggle={() => {}}
-          title="All Notes"
-          actionBlock={
-            <Button
-              className="mx-2"
-              label="Add Note +"
-              onClick={() => setShowPane(true)}
-            />
-          }
-          searchProps={{
-            onChange: e => setSearchValue(e.target.value),
-            value: searchValue,
-          }}
-        />
+        <Header setShowPane={setShowPane} type="Note" />
         <CreateNotePane setShowPane={setShowPane} showPane={showPane} />
         <Container>
           {NOTES.map(note => (

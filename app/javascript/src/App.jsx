@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import Sidebar from "components/Common/Sidebar";
+import Contacts from "components/Contacts";
 import NoteListing from "components/Notes";
 import "lib/dayjs";
 
@@ -14,7 +15,8 @@ const App = () => (
       <Sidebar />
       <div className="relative flex h-screen flex-grow flex-col overflow-auto">
         <Switch>
-          <Route component={NoteListing} path="/" />
+          <Route exact component={NoteListing} path="/" />
+          <Route exact component={Contacts} path="/contacts" />
         </Switch>
       </div>
     </div>
