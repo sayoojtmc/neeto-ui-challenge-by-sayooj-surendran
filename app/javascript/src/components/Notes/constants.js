@@ -1,3 +1,5 @@
+import * as yup from "yup";
+
 export const FEATURE_LIST = [
   "Uses Rails, React, Tailwind CSS and Webpacker.",
   "Uses Devise, Honeybadger, Sidekiq, PostgreSQL, ActiveAdmin.",
@@ -30,3 +32,15 @@ export const NOTES = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ni",
   },
 ];
+
+export const NOTES_FORM_INITIAL_VALUES = {
+  title: "",
+  description: "",
+};
+
+export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  description: yup.string().required("Description is required"),
+  assignedContact: yup.object().required("Assigned Contact is required"),
+  tag: yup.object().required("Tag is required"),
+});
