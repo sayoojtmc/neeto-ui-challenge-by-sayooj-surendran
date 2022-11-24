@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Form, Formik } from "formik";
+import { Form as FormikForm, Formik } from "formik";
 import { Check } from "neetoicons";
 import { Pane, Toastr } from "neetoui";
 import { Button, Input, Select } from "neetoui/formik";
@@ -12,7 +12,7 @@ import {
   NOTES_FORM_VALIDATION_SCHEMA,
 } from "components/Notes/constants";
 
-const CreateForm = ({ setShowPane }) => {
+const Form = ({ setShowPane }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
@@ -29,7 +29,7 @@ const CreateForm = ({ setShowPane }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form>
+        <FormikForm>
           <Pane.Body>
             <Input
               required
@@ -82,10 +82,10 @@ const CreateForm = ({ setShowPane }) => {
               onClick={() => setShowPane(false)}
             />
           </Pane.Footer>
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   );
 };
 
-export default CreateForm;
+export default Form;
