@@ -3,7 +3,7 @@ import React from "react";
 import { MenuVertical } from "neetoicons";
 import { Dropdown } from "neetoui";
 
-const NoteDropDown = () => {
+const NoteDropDown = ({ setShowDeleteAlert }) => {
   const { Menu, MenuItem } = Dropdown;
 
   return (
@@ -14,7 +14,11 @@ const NoteDropDown = () => {
       >
         <Menu>
           <MenuItem.Button key={0}>Edit</MenuItem.Button>
-          <MenuItem.Button key={1} style="danger">
+          <MenuItem.Button
+            key={1}
+            style="danger"
+            onClick={() => setShowDeleteAlert(true)}
+          >
             Delete
           </MenuItem.Button>
         </Menu>
