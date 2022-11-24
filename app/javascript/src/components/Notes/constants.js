@@ -48,6 +48,8 @@ const NOTES_FORM_CONTACT_DATA = [
 const NOTES_FORM_INITIAL_VALUES = {
   title: "",
   description: "",
+  assignedContact: null,
+  tags: [],
 };
 
 const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
