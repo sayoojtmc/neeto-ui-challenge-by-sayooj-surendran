@@ -61,9 +61,9 @@ const SidePanel = ({ title }) => {
             Tags
           </Typography>
         </MenuBar.SubTitle>
-        <MenuBar.Block count={80} label="Europe" />
-        <MenuBar.Block count={60} label="Middle-East" />
-        <MenuBar.Block count={60} label="Asia" />
+        <MenuBar.Block count={80} label="Sales" />
+        <MenuBar.Block count={60} label="Finance" />
+        <MenuBar.Block count={60} label="User Experience" />
       </MenuBar>
     </div>
   );
