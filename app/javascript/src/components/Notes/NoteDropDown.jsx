@@ -3,9 +3,7 @@ import React from "react";
 import { MenuVertical } from "neetoicons";
 import { Dropdown } from "neetoui";
 
-
 const NoteDropDown = ({ setShowDeleteAlert }) => {
-
   const { Menu, MenuItem } = Dropdown;
 
   return (
