@@ -19,18 +19,6 @@ const NOTES = [
   },
 ];
 
-const NOTES_FORM_INITIAL_VALUES = {
-  title: "",
-  description: "",
-};
-
-const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
-  title: yup.string().required("Title is required"),
-  description: yup.string().required("Description is required"),
-  assignedContact: yup.object().required("Assigned Contact is required"),
-  tag: yup.object().required("Tag is required"),
-});
-
 const NOTES_FORM_TAG_DATA = [
   {
     label: "Sales",
@@ -42,7 +30,7 @@ const NOTES_FORM_TAG_DATA = [
   },
   {
     label: "User Experience",
-    value: "ux",
+    value: "user-experience",
   },
 ];
 
@@ -56,6 +44,46 @@ const NOTES_FORM_CONTACT_DATA = [
     value: "id_2",
   },
 ];
+
+const NOTES_FORM_INITIAL_VALUES = {
+  title: "",
+  description: "",
+};
+
+const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  description: yup.string().required("Description is required"),
+  assignedContact: yup
+    .object()
+    .required("Assigned Contact is required")
+    .nullable()
+    .shape({
+      label: yup.string().oneOf(
+        NOTES_FORM_CONTACT_DATA.map(contactObject => contactObject.label),
+        "Selected choice is invalid"
+      ),
+      value: yup.string().oneOf(
+        NOTES_FORM_CONTACT_DATA.map(contactObject => contactObject.value),
+        "Selected choice is invalid"
+      ),
+    }),
+  tags: yup
+    .array()
+    .of(
+      yup.object().shape({
+        label: yup.string().oneOf(
+          NOTES_FORM_TAG_DATA.map(tagObject => tagObject.label),
+          "Selected choice is invalid"
+        ),
+        value: yup.string().oneOf(
+          NOTES_FORM_TAG_DATA.map(tagObject => tagObject.value),
+          "Selected choice is invalid"
+        ),
+      })
+    )
+    .min(1, "Please select atleast one tag"),
+});
+
 export {
   NOTES,
   NOTES_FORM_INITIAL_VALUES,

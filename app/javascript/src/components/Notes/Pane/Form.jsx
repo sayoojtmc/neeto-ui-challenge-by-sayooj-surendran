@@ -43,11 +43,12 @@ const CreateForm = ({ setShowPane }) => (
         />
         <Select
           isClearable
+          isMulti
           isSearchable
           required
           className="mt-5 w-full flex-grow-0"
           label="Tags"
-          name="tag"
+          name="tags"
           options={NOTES_FORM_TAG_DATA}
           placeholder="Select Role"
         />

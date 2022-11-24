@@ -5,7 +5,7 @@ import { Container, Header } from "neetoui/layouts";
 
 import Card from "components/Notes/Card";
 import { NOTES } from "components/Notes/constants";
-import Create from "components/Notes/Pane/Create";
+import CreateNotePane from "components/Notes/Pane/Create";
 import SidePanel from "components/Notes/SidePanel";
 
 const NoteListing = () => {
@@ -31,7 +31,7 @@ const NoteListing = () => {
             value: searchValue,
           }}
         />
-        <Create setShowPane={setShowPane} showPane={showPane} />
+        <CreateNotePane setShowPane={setShowPane} showPane={showPane} />
         <Container>
           {NOTES.map(note => (
             <Card
