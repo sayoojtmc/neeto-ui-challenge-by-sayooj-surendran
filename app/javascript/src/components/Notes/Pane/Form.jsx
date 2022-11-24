@@ -39,7 +39,7 @@ const CreateForm = ({ setShowPane }) => (
           label="Assigned Contact"
           name="assignedContact"
           options={NOTES_FORM_CONTACT_DATA}
-          placeholder="Select Role"
+          placeholder="Select Contact"
         />
         <Select
           isClearable
@@ -50,7 +50,7 @@ const CreateForm = ({ setShowPane }) => (
           label="Tags"
           name="tags"
           options={NOTES_FORM_TAG_DATA}
-          placeholder="Select Role"
+          placeholder="Select Tag"
         />
       </Pane.Body>
       <Pane.Footer className="flex items-center space-x-2">
