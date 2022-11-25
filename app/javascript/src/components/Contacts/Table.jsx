@@ -6,7 +6,7 @@ import { Avatar, Table as NeetoUITable } from "neetoui";
 import { CONTACTS } from "./constants";
 
 const Table = () => {
-  const [selectedRowKeys, setSelectedRowKeys] = useState();
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   return (
     <NeetoUITable
@@ -37,7 +37,7 @@ const Table = () => {
         },
         {
           dataIndex: "created_at",
-          key: "id",
+          key: "created_at",
           title: "CREATED AT",
           width: 75,
         },
@@ -49,7 +49,7 @@ const Table = () => {
           width: 75,
         },
       ]}
-      onRowSelect={(selectedRowKeys, _) => {
+      onRowSelect={selectedRowKeys => {
         setSelectedRowKeys(selectedRowKeys);
       }}
     />
