@@ -77,9 +77,12 @@ const Form = ({ setShowPane }) => {
               }}
             />
             <Button
+              disabled={isSubmitting}
               label="Cancel"
+              loading={isSubmitting}
               style="text"
-              onClick={() => setShowPane(false)}
+              type="reset"
+              onClick={() => {}}
             />
           </Pane.Footer>
         </FormikForm>
