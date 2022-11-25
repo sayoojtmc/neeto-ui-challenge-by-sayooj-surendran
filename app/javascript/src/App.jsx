@@ -15,7 +15,7 @@ const App = () => (
       <Sidebar />
       <div className="relative flex h-screen flex-grow flex-col overflow-auto">
         <Switch>
-          <Route exact component={NoteListing} path="/" />
+          <Route exact component={NoteListing} path="/notes" />
           <Route exact component={Contacts} path="/contacts" />
         </Switch>
       </div>
