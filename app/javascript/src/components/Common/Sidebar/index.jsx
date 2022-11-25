@@ -12,7 +12,7 @@ const Sidebar = () => (
         description: "View Notes",
         icon: Text,
         label: "Notes",
-        to: "/",
+        to: "/notes",
       },
       {
         description: "View Contacts",
