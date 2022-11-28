@@ -4,7 +4,7 @@ import { Pane, Typography } from "neetoui";
 
 import Form from "./Form";
 
-const CreateNotePane = ({ showPane, setShowPane }) => (
+const Create = ({ showPane, setShowPane }) => (
   <Pane isOpen={showPane} onClose={() => setShowPane(false)}>
     <Pane.Header>
       <Typography style="h2" weight="semibold">
@@ -15,4 +15,4 @@ const CreateNotePane = ({ showPane, setShowPane }) => (
   </Pane>
 );
 
-export default CreateNotePane;
+export default Create;
