@@ -4,7 +4,7 @@ import { Button } from "neetoui";
 import { Header as NeetoUIHeader } from "neetoui/layouts";
 
 const Header = ({ type, setShowPane }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <NeetoUIHeader
@@ -18,8 +18,8 @@ const Header = ({ type, setShowPane }) => {
         />
       }
       searchProps={{
-        onChange: e => setSearchValue(e.target.value),
-        value: searchValue,
+        onChange: e => setSearchTerm(e.target.value),
+        value: searchTerm,
       }}
     />
   );

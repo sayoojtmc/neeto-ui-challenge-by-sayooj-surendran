@@ -12,7 +12,7 @@ import {
 } from "neetoui";
 import { getRelativeTimeFromNow, getDayAndTimeFromDate } from "utils";
 
-import NoteDropDown from "components/Notes/NoteDropDown";
+import Dropdown from "components/Common/Dropdown";
 
 const Card = ({ title, description, type, createdAt }) => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
@@ -21,7 +21,7 @@ const Card = ({ title, description, type, createdAt }) => {
     <div className="my-2 flex flex-col border-2 p-3 shadow-md">
       <div className="flex flex-row">
         <Label>{title}</Label>
-        <NoteDropDown setShowDeleteAlert={setShowDeleteAlert} />
+        <Dropdown setShowDeleteAlert={setShowDeleteAlert} />
       </div>
       <Typography style="body3">{description}</Typography>
       <hr className="my-2" />

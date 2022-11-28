@@ -1,16 +1,16 @@
 import React from "react";
 
 import { MenuVertical } from "neetoicons";
-import { Dropdown } from "neetoui";
+import { Dropdown as NeetoUIDropdown } from "neetoui";
 
-const NoteDropDown = ({ setShowDeleteAlert }) => {
-  const { Menu, MenuItem } = Dropdown;
+const Dropdown = ({ setShowDeleteAlert }) => {
+  const { Menu, MenuItem } = NeetoUIDropdown;
 
   return (
     <div className="ml-auto flex">
-      <Dropdown
+      <NeetoUIDropdown
         customTarget={<MenuVertical className="p-1" />}
-        label="Dropdown"
+        label="NeetoUIDropdown"
       >
         <Menu>
           <MenuItem.Button>Edit</MenuItem.Button>
@@ -21,8 +21,8 @@ const NoteDropDown = ({ setShowDeleteAlert }) => {
             Delete
           </MenuItem.Button>
         </Menu>
-      </Dropdown>
+      </NeetoUIDropdown>
     </div>
   );
 };
-export default NoteDropDown;
+export default Dropdown;
