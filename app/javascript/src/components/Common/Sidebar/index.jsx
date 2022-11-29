@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Collapse, Text, User, UserCircle } from "neetoicons";
+import { Collapse, Text, User, UserCircle, Settings } from "neetoicons";
 import { Label, Switch } from "neetoui";
 import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 
@@ -19,6 +19,12 @@ const Sidebar = () => (
         icon: UserCircle,
         label: "Contacts",
         to: "/contacts",
+      },
+      {
+        description: "Settings",
+        icon: Settings,
+        label: "Settings",
+        to: "/settings",
       },
     ]}
     profileInfo={{

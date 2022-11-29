@@ -18,7 +18,7 @@ const Card = ({ title, description, type, createdAt }) => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
 
   return (
-    <div className="my-2 flex flex-col border-2 p-3 shadow-md">
+    <div className="my-2 flex w-full flex-col border-2 p-3 shadow-md">
       <div className="flex flex-row">
         <Label>{title}</Label>
         <Dropdown setShowDeleteAlert={setShowDeleteAlert} />
