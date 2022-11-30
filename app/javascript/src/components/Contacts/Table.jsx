@@ -61,7 +61,7 @@ const Table = () => {
       />
       <Alert
         isOpen={showDeleteAlert}
-        message="Are you sure you want to delete the contact? This action cannot be undone."
+        message="Are you sure you want to delete this contact? This action cannot be undone."
         title="Delete Contact"
         onClose={() => setShowDeleteAlert(false)}
         onSubmit={() => {

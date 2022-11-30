@@ -43,7 +43,7 @@ const Card = ({ title, description, type, createdAt }) => {
       </div>
       <Alert
         isOpen={showDeleteAlert}
-        message="Are you sure you want to delete the note? This action cannot be undone."
+        message="Are you sure you want to delete this note? This action cannot be undone."
         title="Delete Note"
         onClose={() => setShowDeleteAlert(false)}
         onSubmit={() => {
